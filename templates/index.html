@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parkinson Detection</title>
+    <style>
+        body { font-family: Arial; background-color: #f4f4f4; text-align: center; }
+        form { background: white; padding: 20px; display: inline-block; margin-top: 50px; border-radius: 10px; }
+        input { margin: 5px; padding: 8px; width: 200px; }
+        button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🧠 Parkinson’s Disease Detection</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+    <input type="text" name="MDVP:Fo(Hz)" placeholder="Enter Fo (Hz)" required><br>
+    <input type="text" name="MDVP:Fhi(Hz)" placeholder="Enter Fhi (Hz)" required><br>
+    <input type="text" name="MDVP:Flo(Hz)" placeholder="Enter Flo (Hz)" required><br>
+    <input type="text" name="MDVP:Jitter(%)" placeholder="Enter Jitter (%)" required><br>
+    <input type="text" name="MDVP:Jitter(Abs)" placeholder="Enter Jitter (Abs)" required><br>
+    <input type="text" name="MDVP:RAP" placeholder="Enter RAP" required><br>
+    <input type="text" name="MDVP:PPQ" placeholder="Enter PPQ" required><br>
+    <input type="text" name="Jitter:DDP" placeholder="Enter DDP" required><br>
+    <input type="text" name="MDVP:Shimmer" placeholder="Enter Shimmer" required><br>
+    <input type="text" name="MDVP:Shimmer(dB)" placeholder="Enter Shimmer (dB)" required><br>
+    <input type="text" name="Shimmer:APQ3" placeholder="Enter APQ3" required><br>
+    <input type="text" name="Shimmer:APQ5" placeholder="Enter APQ5" required><br>
+    <input type="text" name="MDVP:APQ" placeholder="Enter APQ" required><br>
+    <input type="text" name="Shimmer:DDA" placeholder="Enter DDA" required><br>
+    <input type="text" name="NHR" placeholder="Enter NHR" required><br>
+    <input type="text" name="HNR" placeholder="Enter HNR" required><br>
+    <input type="text" name="RPDE" placeholder="Enter RPDE" required><br>
+    <input type="text" name="DFA" placeholder="Enter DFA" required><br>
+    <input type="text" name="spread1" placeholder="Enter spread1" required><br>
+    <input type="text" name="spread2" placeholder="Enter spread2" required><br>
+    <input type="text" name="D2" placeholder="Enter D2" required><br>
+    <input type="text" name="PPE" placeholder="Enter PPE" required><br>
+
+    <button type="submit">Predict</button>
+</form>
+
+    <h2>{{ prediction_text }}</h2>
+</body>
+</html>
