@@ -1,0 +1,61 @@
+{
+  "dataset": "UCI Parkinson's Voice (N=195, 22 features)",
+  "test_size": 0.2,
+  "seed": 42,
+  "best_params": {
+    "svm__C": "10",
+    "svm__gamma": "scale",
+    "svm__kernel": "poly"
+  },
+  "cv_f1_best": 0.9314,
+  "baselines_cv_f1": {
+    "logistic_regression": {
+      "cv_f1_mean": 0.8868,
+      "cv_f1_std": 0.0248
+    },
+    "random_forest": {
+      "cv_f1_mean": 0.9333,
+      "cv_f1_std": 0.0292
+    }
+  },
+  "test": {
+    "f1": 0.918,
+    "precision": 0.875,
+    "recall": 0.9655,
+    "roc_auc": 0.9552,
+    "confusion_matrix": [
+      [
+        6,
+        4
+      ],
+      [
+        1,
+        28
+      ]
+    ]
+  },
+  "feature_names": [
+    "MDVP:Fo(Hz)",
+    "MDVP:Fhi(Hz)",
+    "MDVP:Flo(Hz)",
+    "MDVP:Jitter(%)",
+    "MDVP:Jitter(Abs)",
+    "MDVP:RAP",
+    "MDVP:PPQ",
+    "Jitter:DDP",
+    "MDVP:Shimmer",
+    "MDVP:Shimmer(dB)",
+    "Shimmer:APQ3",
+    "Shimmer:APQ5",
+    "MDVP:APQ",
+    "Shimmer:DDA",
+    "NHR",
+    "HNR",
+    "RPDE",
+    "DFA",
+    "spread1",
+    "spread2",
+    "D2",
+    "PPE"
+  ]
+}
