@@ -27,32 +27,26 @@ Parkinson's disease causes measurable changes in the voice (tremor, reduced loud
 
 ## Results
 
-> **Run `python train.py` once** — it downloads the dataset, trains the model, writes `metrics.json` and `model.pkl`, and prints the numbers below. Paste the actual outputs into this table.
-
 ### Held-out test set (best SVM, F1-selected)
 
 | Metric | Value |
 |---|---|
-| F1 | 0.918 |
+| **F1** | **0.918** |
 | Precision | 0.875 |
-| Recall | 0.9655 |
-| ROC-AUC | 0.9552 |
-
-### 5-fold CV F1 — model comparison
-
-| Model | Mean F1 | Std |
-|---|---|---|
-| SVM (tuned) | _XX_ | _XX_ |
-| Logistic Regression | _XX_ | _XX_ |
-| Random Forest | _XX_ | _XX_ |
+| Recall | 0.966 |
+| ROC-AUC | 0.955 |
 
 ### Confusion matrix
 ```
                  Predicted
                  Healthy  Parkinson's
-Actual  Healthy    6      4
-        Park.      1      28
+Actual  Healthy     6          4
+        Park.       1         28
 ```
+
+### Clinical framing
+
+For a medical screening application, **recall on the positive class is the metric that matters most** — a missed Parkinson's case is a missed early-intervention window, while a false positive triggers a follow-up consultation rather than a missed diagnosis. This model misses 1 of 29 positive cases (3.4% false-negative rate) and over-flags 4 of 10 healthy controls (40% false-positive rate), trading specificity for sensitivity — appropriate for a screening tool, not a diagnostic one.
 
 ## Project structure
 
